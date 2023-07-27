@@ -87,5 +87,22 @@ button {
 label{
   color: #fff;
 }
+.radioButton{
 
+  justify-content: space-around;
+  align-items: center;
+  height: 420px;
+  max-width: 768px;
+  margin: 0 auto;
+  font-family: monospace, sans-serif;
+  font-size: 22px;
 
+}
+.transform-origin-radio-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.transform-origin-x {
+  margin-right: 10%;
+}

@@ -7,8 +7,16 @@ const persperctiveObj  = reactive({
   prespective :100,
   rotateX :0,
   rotateY :0,
-  rotateZ :0
+  rotateZ :0,
+  transformOriginX: "center",
+  transformOriginY: "center",
+ 
 });
+
+
+
+
+
 
 const change = computed(()=>{
   return{
@@ -18,7 +26,10 @@ rotateX(${persperctiveObj.rotateX}deg)
 rotateY(${persperctiveObj.rotateY}deg)
 rotateZ(${persperctiveObj.rotateZ}deg)
 
-    `
+
+    `,
+    transformOrigin:`${persperctiveObj.transformOriginX} ${persperctiveObj.transformOriginY}`
+
   }
 
 })
@@ -68,6 +79,44 @@ const reset =()=>
         </div>
       </section>
     </main>
+    
+      <div class="radioButton">
+      <label >
+          transform-origin: {{persperctiveObj.transformOriginX}} {{persperctiveObj.transformOriginY}}<br>
+          <div class="transform-origin-radio-buttons">
+            <div class="transform-origin-x">
+              <label for="t-left">
+                <input type="radio" name="transform-left" value="left" v-model="persperctiveObj.transformOriginX" id="t-left" />
+                 left
+              </label>
+              <br>
+              <label for="t-right">
+                <input type="radio" name="transform-left" value="right" v-model="persperctiveObj.transformOriginX" id="t-right" /> right
+              </label>
+              <br>
+              <label for="t-center">
+                <input type="radio"  name="transform-left" value="center" v-model="persperctiveObj.transformOriginX" id="t-center" /> center
+              </label>
+            </div>
+
+            <div class="transform-origin-y">
+              <label for="t-top">
+                <input type="radio" name="transform-right" value="top" v-model="persperctiveObj.transformOriginY" id="t-top" />
+                 top
+              </label>
+              <br>
+              <label for="t-bottom">
+                <input type="radio" name="transform-right" value="bottom" v-model="persperctiveObj.transformOriginY" id="t-bottom" /> bottom
+              </label>
+              <br>
+              <label for="t-center2">
+                <input type="radio" name="transform-right" value="center" v-model="persperctiveObj.transformOriginY" id="t-center2" /> center
+              </label>
+            </div>
+          </div>
+
+        </label>
+      </div>
  
 </template>
 
